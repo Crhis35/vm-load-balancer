@@ -1,0 +1,15 @@
+# Copy index.php file to our webserver
+
+---
+- hosts: all
+  become: true
+
+  vars_files:
+    - keys.yml
+  tasks:
+    - name: Clone a github repository
+      git:
+        repo: https://github.com/Philipinho/Simple-PHP-Blog.git
+        dest: /usr/app/
+        clone: yes
+        update: yes

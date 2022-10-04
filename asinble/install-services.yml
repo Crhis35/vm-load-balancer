@@ -1,0 +1,18 @@
+# Install services on webserver
+
+---
+
+- hosts: all
+  become: true
+  tasks:
+    - name: Install Apache and PHP
+      yum:
+        name:
+          - httpd
+          - php
+        state: present
+    - name: Ensure Apache starts when system reboots
+      service: 
+        name: httpd
+        state: started
+        enabled: yes  

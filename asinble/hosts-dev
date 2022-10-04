@@ -1,0 +1,7 @@
+# hosts-dev
+
+[webservers]
+dev ansible_host= machine-ip
+
+[local]
+control ansible_connection=local
